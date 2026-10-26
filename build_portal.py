@@ -1,0 +1,397 @@
+import sys
+from pathlib import Path
+
+portal_code = """<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ApexCore · Industrial QC Management System (Portfolio Showcase)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background: #0f172a;
+      color: #f8fafc;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    header {
+      background: #1e293b;
+      border-bottom: 1px solid #334155;
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-shrink: 0;
+      z-index: 10;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .brand-logo {
+      width: 34px;
+      height: 34px;
+      background: linear-gradient(135deg, #2563eb, #3b82f6);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 15px;
+      color: white;
+      box-shadow: 0 2px 8px rgba(37,99,235,0.4);
+    }
+    .brand-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 1.2;
+    }
+    .brand-subtitle {
+      font-size: 12px;
+      color: #94a3b8;
+    }
+    .badge-demo {
+      background: #166534;
+      color: #86efac;
+      padding: 4px 12px;
+      border-radius: 9999px;
+      font-size: 11px;
+      font-weight: 600;
+      border: 1px solid #22c55e;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .badge-demo::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #4ade80;
+    }
+    .app-container {
+      display: flex;
+      flex: 1;
+      height: calc(100vh - 59px);
+      overflow: hidden;
+    }
+    aside {
+      width: 330px;
+      background: #111827;
+      border-right: 1px solid #1f2937;
+      display: flex;
+      flex-direction: column;
+      flex-shrink: 0;
+    }
+    .nav-search {
+      padding: 12px 16px;
+      border-bottom: 1px solid #1f2937;
+    }
+    .nav-search input {
+      width: 100%;
+      padding: 9px 12px;
+      background: #1f2937;
+      border: 1px solid #374151;
+      border-radius: 6px;
+      color: #e5e7eb;
+      font-size: 12px;
+      outline: none;
+    }
+    .nav-search input:focus {
+      border-color: #3b82f6;
+    }
+    .nav-list {
+      flex: 1;
+      overflow-y: auto;
+      padding: 12px 10px;
+    }
+    .nav-category {
+      font-size: 11px;
+      font-weight: 700;
+      color: #64748b;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 14px 8px 6px 8px;
+    }
+    .nav-btn {
+      width: 100%;
+      text-align: left;
+      padding: 10px 12px;
+      background: transparent;
+      border: none;
+      border-radius: 6px;
+      color: #cbd5e1;
+      font-size: 12.5px;
+      font-weight: 500;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 4px;
+      transition: all 0.15s ease;
+      line-height: 1.4;
+    }
+    .nav-btn:hover {
+      background: #1e293b;
+      color: #ffffff;
+    }
+    .nav-btn.active {
+      background: #2563eb;
+      color: #ffffff;
+      font-weight: 600;
+      box-shadow: 0 2px 8px rgba(37,99,235,0.35);
+    }
+    .nav-btn .pill {
+      font-size: 10px;
+      padding: 2px 6px;
+      border-radius: 4px;
+      background: rgba(255,255,255,0.12);
+      color: inherit;
+      white-space: nowrap;
+      margin-left: 8px;
+    }
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      background: #0f172a;
+      overflow: hidden;
+      position: relative;
+    }
+    .viewport-header {
+      background: #1e293b;
+      border-bottom: 1px solid #334155;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 13px;
+      flex-shrink: 0;
+    }
+    .viewport-title {
+      font-weight: 600;
+      color: #f1f5f9;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .viewport-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .viewport-actions select {
+      background: #0f172a;
+      border: 1px solid #334155;
+      color: #e2e8f0;
+      padding: 5px 8px;
+      border-radius: 6px;
+      font-size: 12px;
+      outline: none;
+    }
+    .viewport-actions a {
+      color: #38bdf8;
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 500;
+      padding: 4px 8px;
+      border-radius: 4px;
+      background: rgba(56, 189, 248, 0.1);
+    }
+    .viewport-actions a:hover {
+      background: rgba(56, 189, 248, 0.2);
+    }
+    .canvas-frame-wrap {
+      flex: 1;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background: #090d16;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 20px;
+    }
+    iframe {
+      border: none;
+      background: #F5F7FA;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.6);
+      border-radius: 8px;
+    }
+    @media (max-width: 860px) {
+      aside { width: 250px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <div class="brand-logo">QC</div>
+      <div>
+        <div class="brand-title">ApexCore Industrial QC Platform</div>
+        <div class="brand-subtitle">Automated Plant Quality Inspection & Process Optimization System</div>
+      </div>
+    </div>
+    <div style="display: flex; align-items: center; gap: 14px;">
+      <span class="badge-demo">Standalone Interactive Showcase</span>
+    </div>
+  </header>
+
+  <div class="app-container">
+    <aside>
+      <div class="nav-search">
+        <input type="text" id="search" placeholder="Cari modul atau laporan QC…" oninput="filterNav()">
+      </div>
+      <div class="nav-list" id="navList"></div>
+    </aside>
+
+    <main>
+      <div class="viewport-header">
+        <div class="viewport-title" id="viewTitle">Executive Quality Dashboard</div>
+        <div class="viewport-actions">
+          <label style="font-size: 12px; color: #94a3b8;">Zoom:
+            <select id="zoomSelect" onchange="changeZoom()">
+              <option value="fit">Fit Width</option>
+              <option value="1">100% Native</option>
+              <option value="0.85">85%</option>
+              <option value="0.75">75%</option>
+              <option value="0.6">60%</option>
+            </select>
+          </label>
+          <a id="externalLink" href="#" target="_blank">Buka Layar Penuh ↗</a>
+        </div>
+      </div>
+      <div class="canvas-frame-wrap" id="frameWrap">
+        <iframe id="mainFrame" src="" style="width: 1600px; height: 1850px;"></iframe>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    const navModules = [
+      {
+        category: 'Executive & Overview',
+        items: [
+          { name: 'Executive Quality Overview Dashboard', file: 'screens/y8cNK.html', width: 1600, height: 1850, pill: 'Overview' },
+          { name: 'Executive Mobile Quality View (390px)', file: 'screens/KjXAA.html', width: 390, height: 1600, pill: 'Mobile' }
+        ]
+      },
+      {
+        category: 'Lini InsulCore & ThermalBoard',
+        items: [
+          { name: 'InsulCore Pipe · Monitoring Reject & Mutu', file: 'screens/t5zST.html', width: 1600, height: 1860, pill: 'Reject 50%' },
+          { name: 'InsulCore Pipe · Laporan Inspeksi Selesai (#289)', file: 'screens/GhODq.html', width: 1600, height: 2190, pill: 'Verified' },
+          { name: 'ThermalBoard · Form Input Baru (Fresh Entry)', file: 'screens/Y6gZpr.html', width: 1600, height: 1750, pill: 'Entry' }
+        ]
+      },
+      {
+        category: 'Lini PolyGrit & ThermalShield',
+        items: [
+          { name: 'PolyGrit · QC Lini Produksi & Grading', file: 'screens/AbSlZ.html', width: 1600, height: 1930, pill: 'Production' },
+          { name: 'PolyGrit · Audit Batch A103 Lolos QA', file: 'screens/J78jH.html', width: 1600, height: 2100, pill: 'Approved' },
+          { name: 'ThermalShield · Monitoring Batch & Mutu', file: 'screens/VqtTF.html', width: 1600, height: 1910, pill: 'Grading' },
+          { name: 'PyroBlock · Verifikasi Mutu Tahan Api', file: 'screens/o593R.html', width: 1600, height: 1820, pill: 'PyroBlock' }
+        ]
+      },
+      {
+        category: 'Kalkulator Rekayasa & Lab QA',
+        items: [
+          { name: 'Kalkulator Densitas & Dimensi Pipa InsulCore', file: 'screens/S0LDx6.html', width: 1600, height: 1600, pill: 'Calculator' },
+          { name: 'Studio Uji Sieve (Particle Size Distribution)', file: 'screens/dJHV7.html', width: 1600, height: 2420, pill: 'Lab R&D' },
+          { name: 'Registri Sertifikat Mutu (COA Release)', file: 'screens/O0u7ER.html', width: 1600, height: 1300, pill: 'COA Studio' },
+          { name: 'Sertifikat Mutu Disetujui (Customer Inspection)', file: 'screens/NSnsc.html', width: 1600, height: 1780, pill: 'Certificate' }
+        ]
+      }
+    ];
+
+    let currentItem = navModules[0].items[0];
+
+    function renderNav() {
+      const container = document.getElementById('navList');
+      container.innerHTML = '';
+      navModules.forEach(cat => {
+        const catDiv = document.createElement('div');
+        catDiv.className = 'nav-category';
+        catDiv.textContent = cat.category;
+        container.appendChild(catDiv);
+
+        cat.items.forEach(item => {
+          const btn = document.createElement('button');
+          btn.className = 'nav-btn' + (item.file === currentItem.file ? ' active' : '');
+          btn.innerHTML = `<span>${item.name}</span><span class="pill">${item.pill}</span>`;
+          btn.onclick = () => selectItem(item);
+          container.appendChild(btn);
+        });
+      });
+    }
+
+    function selectItem(item) {
+      currentItem = item;
+      document.getElementById('viewTitle').textContent = item.name;
+      document.getElementById('externalLink').href = item.file;
+      const frame = document.getElementById('mainFrame');
+      frame.src = item.file;
+      frame.style.width = item.width + 'px';
+      frame.style.height = item.height + 'px';
+      renderNav();
+      applyZoom();
+    }
+
+    function changeZoom() {
+      applyZoom();
+    }
+
+    function applyZoom() {
+      const select = document.getElementById('zoomSelect');
+      const frame = document.getElementById('mainFrame');
+      const wrap = document.getElementById('frameWrap');
+      const val = select.value;
+
+      if (val === 'fit') {
+        const availableW = wrap.clientWidth - 40;
+        const scale = Math.min(1, availableW / currentItem.width);
+        frame.style.transform = `scale(${scale})`;
+        frame.style.transformOrigin = 'top center';
+        wrap.style.overflowX = 'hidden';
+      } else {
+        const scale = parseFloat(val);
+        frame.style.transform = `scale(${scale})`;
+        frame.style.transformOrigin = 'top center';
+        wrap.style.overflowX = 'auto';
+      }
+    }
+
+    function filterNav() {
+      const query = document.getElementById('search').value.toLowerCase();
+      document.querySelectorAll('.nav-btn').forEach(btn => {
+        const match = btn.textContent.toLowerCase().includes(query);
+        btn.style.display = match ? 'flex' : 'none';
+      });
+    }
+
+    window.addEventListener('resize', () => {
+      if (document.getElementById('zoomSelect').value === 'fit') {
+        applyZoom();
+      }
+    });
+
+    renderNav();
+    selectItem(currentItem);
+  </script>
+</body>
+</html>
+"""
+
+deploy_dir = Path(r"C:\Users\NeoAstro\Desktop\qchub-demo")
+(deploy_dir / "index.html").write_text(portal_code, encoding="utf-8")
+(deploy_dir / "404.html").write_text(portal_code, encoding="utf-8")
+print("Written index.html & 404.html successfully!")
