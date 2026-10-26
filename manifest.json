@@ -1,0 +1,458 @@
+{
+  "source": "QCHUB.pen",
+  "screens": [
+    {
+      "id": "bi8Au",
+      "name": "QC Hub · UI foundations",
+      "width": 1440,
+      "export": "screens/bi8Au.html"
+    },
+    {
+      "id": "fT66t",
+      "name": "QC Hub · Workspace components",
+      "export": "screens/fT66t.html"
+    },
+    {
+      "id": "y8cNK",
+      "name": "QC Hub · Unified global dashboard",
+      "width": 1600,
+      "height": 1848,
+      "export": "screens/y8cNK.html"
+    },
+    {
+      "id": "KjXAA",
+      "name": "QC Hub · Global dashboard · Mobile 390",
+      "width": 390,
+      "export": "screens/KjXAA.html"
+    },
+    {
+      "id": "t5zST",
+      "name": "Coreshield · Workspace redesign",
+      "width": 1600,
+      "height": 1857,
+      "export": "screens/t5zST.html"
+    },
+    {
+      "id": "Y6gZpr",
+      "name": "Coreshield · New report · Fresh entry",
+      "width": 1600,
+      "height": 1752,
+      "export": "screens/Y6gZpr.html"
+    },
+    {
+      "id": "GhODq",
+      "name": "Coreshield · Completed report #289",
+      "width": 1600,
+      "height": 2186,
+      "export": "screens/GhODq.html"
+    },
+    {
+      "id": "ep5TA",
+      "name": "Coreshield workspace · Mobile 390",
+      "width": 390,
+      "export": "screens/ep5TA.html"
+    },
+    {
+      "id": "Gccsw",
+      "name": "Coreshield report #289 · Mobile 390",
+      "width": 390,
+      "export": "screens/Gccsw.html"
+    },
+    {
+      "id": "afh8W",
+      "name": "Coreshield new report · Mobile 390",
+      "width": 390,
+      "export": "screens/afh8W.html"
+    },
+    {
+      "id": "AbSlZ",
+      "name": "Perlite · Workspace",
+      "width": 1600,
+      "height": 1927,
+      "export": "screens/AbSlZ.html"
+    },
+    {
+      "id": "D9ig9L",
+      "name": "Perlite · New report · A103 draft",
+      "width": 1600,
+      "height": 2516,
+      "export": "screens/D9ig9L.html"
+    },
+    {
+      "id": "e9XRg",
+      "name": "Perlite · New report · A204 container draft",
+      "width": 1600,
+      "height": 2449,
+      "export": "screens/e9XRg.html"
+    },
+    {
+      "id": "deljn",
+      "name": "Perlite · Completed report · A204 container",
+      "width": 1600,
+      "height": 1922,
+      "export": "screens/deljn.html"
+    },
+    {
+      "id": "J78jH",
+      "name": "Perlite · Completed report · A103",
+      "width": 1600,
+      "height": 2095,
+      "export": "screens/J78jH.html"
+    },
+    {
+      "id": "wYu2R",
+      "name": "Perlite workspace · Mobile 390",
+      "width": 390,
+      "height": 2397,
+      "export": "screens/wYu2R.html"
+    },
+    {
+      "id": "yejEU",
+      "name": "Perlite new report · A103 draft · Mobile 390",
+      "width": 390,
+      "height": 2070,
+      "export": "screens/yejEU.html"
+    },
+    {
+      "id": "AyRgT",
+      "name": "Perlite new report · A204 container · Mobile 390",
+      "width": 390,
+      "height": 1836,
+      "export": "screens/AyRgT.html"
+    },
+    {
+      "id": "eHbZt",
+      "name": "Perlite completed report · A103 · Mobile 390",
+      "width": 390,
+      "height": 2233,
+      "export": "screens/eHbZt.html"
+    },
+    {
+      "id": "VqtTF",
+      "name": "Vermiculite · Workspace",
+      "width": 1600,
+      "height": 1903,
+      "export": "screens/VqtTF.html"
+    },
+    {
+      "id": "iMof3",
+      "name": "Vermiculite · New report · B102 fresh entry",
+      "width": 1600,
+      "height": 1994,
+      "export": "screens/iMof3.html"
+    },
+    {
+      "id": "BnWxL",
+      "name": "Vermiculite · New report · B101 fresh entry",
+      "width": 1600,
+      "height": 1994,
+      "export": "screens/BnWxL.html"
+    },
+    {
+      "id": "n0M3q",
+      "name": "Vermiculite · New report · B101.HD fresh entry",
+      "width": 1600,
+      "height": 1994,
+      "export": "screens/n0M3q.html"
+    },
+    {
+      "id": "B72hO",
+      "name": "Vermiculite · New report · B103 fresh entry",
+      "width": 1600,
+      "height": 1994,
+      "export": "screens/B72hO.html"
+    },
+    {
+      "id": "gxVnp",
+      "name": "Vermiculite · New report · B104 fresh entry",
+      "width": 1600,
+      "height": 1994,
+      "export": "screens/gxVnp.html"
+    },
+    {
+      "id": "jNCli",
+      "name": "Vermiculite · Completed report · B102",
+      "width": 1600,
+      "height": 2057,
+      "export": "screens/jNCli.html"
+    },
+    {
+      "id": "TUmdz",
+      "name": "Vermiculite · Completed report · B101",
+      "width": 1600,
+      "height": 2036,
+      "export": "screens/TUmdz.html"
+    },
+    {
+      "id": "cMjiw",
+      "name": "Vermiculite · Completed report · B101.HD",
+      "width": 1600,
+      "height": 2036,
+      "export": "screens/cMjiw.html"
+    },
+    {
+      "id": "XpbKK",
+      "name": "Vermiculite · Completed report · B103",
+      "width": 1600,
+      "height": 2036,
+      "export": "screens/XpbKK.html"
+    },
+    {
+      "id": "swWT9",
+      "name": "Vermiculite · Completed report · B104 · on hold",
+      "width": 1600,
+      "height": 2057,
+      "export": "screens/swWT9.html"
+    },
+    {
+      "id": "pzysy",
+      "name": "Vermiculite workspace · Mobile 390",
+      "width": 390,
+      "height": 2506,
+      "export": "screens/pzysy.html"
+    },
+    {
+      "id": "N5GAd4",
+      "name": "Vermiculite new report · B102 fresh · Mobile 390",
+      "width": 390,
+      "height": 1743,
+      "export": "screens/N5GAd4.html"
+    },
+    {
+      "id": "gjYfb",
+      "name": "Vermiculite completed report · B102 · Mobile 390",
+      "width": 390,
+      "height": 2160,
+      "export": "screens/gjYfb.html"
+    },
+    {
+      "id": "o593R",
+      "name": "Firestop & Fireproofing · Workspace",
+      "width": 1600,
+      "height": 1813,
+      "export": "screens/o593R.html"
+    },
+    {
+      "id": "VmuOo",
+      "name": "Firestop & Fireproofing · Batch C010 draft",
+      "width": 1600,
+      "height": 1976,
+      "export": "screens/VmuOo.html"
+    },
+    {
+      "id": "R1rMs",
+      "name": "Firestop workspace · Mobile 390",
+      "width": 390,
+      "export": "screens/R1rMs.html"
+    },
+    {
+      "id": "T5QKSz",
+      "name": "Firestop batch C010 draft · Mobile 390",
+      "width": 390,
+      "export": "screens/T5QKSz.html"
+    },
+    {
+      "id": "wI2eO",
+      "name": "Sample testing · Lab archive",
+      "width": 1600,
+      "height": 1420,
+      "export": "screens/wI2eO.html"
+    },
+    {
+      "id": "dJHV7",
+      "name": "Sample testing · Sieve analysis studio",
+      "width": 1600,
+      "height": 2410,
+      "export": "screens/dJHV7.html"
+    },
+    {
+      "id": "S0LDx6",
+      "name": "Density calculator · Pipe cover mode",
+      "width": 1600,
+      "height": 1590,
+      "export": "screens/S0LDx6.html"
+    },
+    {
+      "id": "O0u7ER",
+      "name": "Certificate studio · Registry",
+      "width": 1600,
+      "height": 1257,
+      "export": "screens/O0u7ER.html"
+    },
+    {
+      "id": "NSnsc",
+      "name": "Certificate studio · IPI-LAB-2026-088 reviewed",
+      "width": 1600,
+      "height": 1768,
+      "export": "screens/NSnsc.html"
+    },
+    {
+      "id": "Qn2xB",
+      "name": "Sample archive · Mobile 390",
+      "width": 390,
+      "export": "screens/Qn2xB.html"
+    },
+    {
+      "id": "lomgw",
+      "name": "Sieve studio · Mobile 390",
+      "width": 390,
+      "export": "screens/lomgw.html"
+    },
+    {
+      "id": "FiCnB",
+      "name": "Density calculator · Mobile 390",
+      "width": 390,
+      "export": "screens/FiCnB.html"
+    },
+    {
+      "id": "gahgX",
+      "name": "Certificate registry · Mobile 390",
+      "width": 390,
+      "export": "screens/gahgX.html"
+    },
+    {
+      "id": "vNoS5",
+      "name": "Certificate studio · Mobile 390",
+      "width": 390,
+      "export": "screens/vNoS5.html"
+    }
+  ],
+  "variables": {
+    "bg": {
+      "type": "color",
+      "value": "#F5F7FA"
+    },
+    "surface": {
+      "type": "color",
+      "value": "#FFFFFF"
+    },
+    "ink": {
+      "type": "color",
+      "value": "#182230"
+    },
+    "muted": {
+      "type": "color",
+      "value": "#667085"
+    },
+    "border": {
+      "type": "color",
+      "value": "#E4E7EC"
+    },
+    "primary": {
+      "type": "color",
+      "value": "#2563EB"
+    },
+    "primary-soft": {
+      "type": "color",
+      "value": "#EFF4FF"
+    },
+    "success": {
+      "type": "color",
+      "value": "#067647"
+    },
+    "success-soft": {
+      "type": "color",
+      "value": "#ECFDF3"
+    },
+    "warning": {
+      "type": "color",
+      "value": "#B54708"
+    },
+    "warning-soft": {
+      "type": "color",
+      "value": "#FFFAEB"
+    },
+    "danger": {
+      "type": "color",
+      "value": "#B42318"
+    },
+    "danger-soft": {
+      "type": "color",
+      "value": "#FEF3F2"
+    },
+    "font": {
+      "type": "string",
+      "value": "Inter"
+    },
+    "radius": {
+      "type": "number",
+      "value": 8
+    },
+    "space": {
+      "type": "number",
+      "value": 8
+    },
+    "perlite-soft": {
+      "type": "color",
+      "value": "#E0E7EC"
+    },
+    "perlite-strong": {
+      "type": "color",
+      "value": "#34505F"
+    },
+    "vermiculite-soft": {
+      "type": "color",
+      "value": "#EDE3D0"
+    },
+    "vermiculite-strong": {
+      "type": "color",
+      "value": "#72541F"
+    },
+    "pass-soft": {
+      "type": "color",
+      "value": "#DFEEE5"
+    },
+    "pass-strong": {
+      "type": "color",
+      "value": "#165F3A"
+    },
+    "fail-soft": {
+      "type": "color",
+      "value": "#F8E0DC"
+    },
+    "fail-strong": {
+      "type": "color",
+      "value": "#9E271F"
+    },
+    "review-soft": {
+      "type": "color",
+      "value": "#F5E5B3"
+    },
+    "review-strong": {
+      "type": "color",
+      "value": "#6B4E00"
+    },
+    "draft-soft": {
+      "type": "color",
+      "value": "#FFF3CD"
+    },
+    "draft-strong": {
+      "type": "color",
+      "value": "#7A5D00"
+    },
+    "locked-soft": {
+      "type": "color",
+      "value": "#EEF1F4"
+    },
+    "locked-strong": {
+      "type": "color",
+      "value": "#475467"
+    },
+    "estimate-soft": {
+      "type": "color",
+      "value": "#FCEBCB"
+    },
+    "estimate-strong": {
+      "type": "color",
+      "value": "#9A6700"
+    },
+    "firestop-soft": {
+      "type": "color",
+      "value": "#F6E2D8"
+    },
+    "firestop-strong": {
+      "type": "color",
+      "value": "#8A3A1E"
+    }
+  }
+}
